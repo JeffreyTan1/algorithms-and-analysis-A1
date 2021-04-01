@@ -1,0 +1,6 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "jopt-simple-5.0.2.jar"
+    ]
+}
