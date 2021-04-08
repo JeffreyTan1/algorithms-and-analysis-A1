@@ -11,21 +11,13 @@ import java.util.HashMap;
  */
 public class AdjacencyMatrix extends AbstractGraph {
 
-    private final int MAX_DIMEN = 15;
     private int[][] adjacencyMatrix;
-    private int numVertex = 0;
-    private HashMap<String, Integer> labelIndexMap;
-    private HashMap<Integer, String> indexLabelMap;
-    private HashMap<String, SIRState> labelStateMap;
 
     /**
      * Contructs empty graph.
      */
     public AdjacencyMatrix() {
         adjacencyMatrix = new int[MAX_DIMEN][MAX_DIMEN];
-        labelIndexMap = new HashMap<String, Integer>();
-        indexLabelMap = new HashMap<Integer, String>();
-        labelStateMap = new HashMap<String, SIRState>();
     } // end of AdjacencyMatrix()
 
     public void addVertex(String vertLabel) {
@@ -34,7 +26,6 @@ public class AdjacencyMatrix extends AbstractGraph {
             adjacencyMatrix[numVertex][i] = 0;
             adjacencyMatrix[i][numVertex] = 0;
         }
-
         labelIndexMap.put(vertLabel, numVertex);
         indexLabelMap.put(numVertex, vertLabel);
         labelStateMap.put(vertLabel, SIRState.S);
@@ -48,20 +39,6 @@ public class AdjacencyMatrix extends AbstractGraph {
         adjacencyMatrix[srcIndex][tarIndex] = 1;
         adjacencyMatrix[tarIndex][srcIndex] = 1;
     } // end of addEdge()
-
-    public void toggleVertexState(String vertLabel) {
-        switch ((SIRState) labelStateMap.get(vertLabel)) {
-        case S:
-            labelStateMap.put(vertLabel, SIRState.I);
-            break;
-        case I:
-            labelStateMap.put(vertLabel, SIRState.R);
-            break;
-        case R:
-            // do nothing
-            break;
-        }
-    } // end of toggleVertexState()
 
     public void deleteEdge(String srcLabel, String tarLabel) {
         int srcIndex = (int) labelIndexMap.get(srcLabel);
@@ -84,14 +61,20 @@ public class AdjacencyMatrix extends AbstractGraph {
         indexLabelMap.remove(vertIndex);
         labelStateMap.remove(vertLabel);
         numVertex--;
+
+        // TODO: Shift matrix
+
     } // end of deleteVertex()
 
     public String[] kHopNeighbours(int k, String vertLabel) {
         String[] kHopNeighboursArray = new String[numVertex];
         int kHopNeighboursArrayLen = 0;
+
         int vertIndex = (int) labelIndexMap.get(vertLabel);
+
         int[] currentNeighbours;
         int currentNeighboursLen;
+
         int[] nextNeighbours = null;
         int nextNeighboursLen = 0;
 
@@ -113,18 +96,19 @@ public class AdjacencyMatrix extends AbstractGraph {
             }
 
             // Iterate through all the neighbours in the currentNeighbours list
-            for (int neighbourIndex = 0; neighbourIndex < currentNeighboursLen; neighbourIndex++) {
+            for (int j = 0; j < currentNeighboursLen; j++) {
                 // Check for edges to other vertices for current neighbour index
-                for (int j = 0; j < numVertex; j++) {
-                    if (adjacencyMatrix[neighbourIndex][j] == 1) {
+                for (int m = 0; m < numVertex; m++) {
+                    if (adjacencyMatrix[currentNeighbours[j]][m] == 1) {
                         // check if the array is already in kHopNeighboursArray
-                        if (!isInArray((String) indexLabelMap.get(j), kHopNeighboursArray)) {
+                        if (!isInArray((String) indexLabelMap.get(m), kHopNeighboursArray)) {
                             // Update the nextNeighbours list which is a list of neighbours, that we may
                             // Need to get neighbours of in the next hop
-                            nextNeighbours[nextNeighboursLen] = j;
+                            nextNeighbours[nextNeighboursLen] = m;
                             nextNeighboursLen++;
                             // Add the neighbours to the return list
-                            kHopNeighboursArray[kHopNeighboursArrayLen] = (String) indexLabelMap.get(j);
+                            kHopNeighboursArray[kHopNeighboursArrayLen] = (String) indexLabelMap
+                                    .get(currentNeighbours[j]);
                             kHopNeighboursArrayLen++;
                         }
                     }
@@ -136,22 +120,6 @@ public class AdjacencyMatrix extends AbstractGraph {
         return kHopNeighboursArray;
 
     } // end of kHopNeighbours()
-
-    private boolean isInArray(String checkStr, String[] array) {
-        for (String s : array) {
-            if (s.equals(checkStr)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public void printVertices(PrintWriter os) {
-        for (int i = 0; i < numVertex; i++) {
-            String label = (String) indexLabelMap.get(i);
-            os.print("(" + label + "," + labelStateMap.get(label) + ") ");
-        }
-    } // end of printVertices()
 
     public void printEdges(PrintWriter os) {
         for (int i = 0; i < numVertex; i++) {
