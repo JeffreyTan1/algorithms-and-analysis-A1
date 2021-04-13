@@ -19,7 +19,7 @@ public class Scenario1 {
             for (int char3 = 0; char3 < 3; char3++) {
                 System.out.println("=============Printing results for file: " + "H" + fileChar2[char2]
                         + fileChar3[char3] + "=====================");
-                int[] k = { 10, 20, 30 };
+                int[] k = { 3, 20, 50 };
 
                 AdjacencyList adjacencyList = new AdjacencyList();
                 AdjacencyMatrix adjacencyMatrix = new AdjacencyMatrix();
@@ -36,13 +36,13 @@ public class Scenario1 {
 
                 for (int i = 0; i < 3; i++) {
                     if (i == 0) {
-                        System.out.println("k = 10");
+                        System.out.println("k = 3");
                     }
                     if (i == 1) {
                         System.out.println("k = 20");
                     }
                     if (i == 2) {
-                        System.out.println("k = 30");
+                        System.out.println("k = 50");
                     }
                     runKHopOnSeeds(kHopSeeds, adjacencyMatrix, k[i]);
 

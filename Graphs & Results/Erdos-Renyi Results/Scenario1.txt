@@ -1,0 +1,126 @@
+=============Printing results for file: HH1=====================
+Graph name : HH1
+k = 3
+Average kHop time for class AdjacencyMatrix: 4396233.0nano seconds
+Average kHop time for class AdjacencyList: 4582531.0nano seconds
+Average kHop time for class IncidenceMatrix: 5.2457594E7nano seconds
+k = 20
+Average kHop time for class AdjacencyMatrix: 6718422.0nano seconds
+Average kHop time for class AdjacencyList: 6265294.0nano seconds
+Average kHop time for class IncidenceMatrix: 7.7197388E7nano seconds
+k = 50
+Average kHop time for class AdjacencyMatrix: 6671798.0nano seconds
+Average kHop time for class AdjacencyList: 6183457.0nano seconds
+Average kHop time for class IncidenceMatrix: 7.8119244E7nano seconds
+=============Printing results for file: HH2=====================
+Graph name : HH2
+k = 3
+Average kHop time for class AdjacencyMatrix: 4320453.0nano seconds
+Average kHop time for class AdjacencyList: 4172406.0nano seconds
+Average kHop time for class IncidenceMatrix: 4.9289802E7nano seconds
+k = 20
+Average kHop time for class AdjacencyMatrix: 7084317.0nano seconds
+Average kHop time for class AdjacencyList: 6799331.0nano seconds
+Average kHop time for class IncidenceMatrix: 7.7699532E7nano seconds
+k = 50
+Average kHop time for class AdjacencyMatrix: 6801570.0nano seconds
+Average kHop time for class AdjacencyList: 6306387.0nano seconds
+Average kHop time for class IncidenceMatrix: 7.9423958E7nano seconds
+=============Printing results for file: HH3=====================
+Graph name : HH3
+k = 3
+Average kHop time for class AdjacencyMatrix: 4108366.0nano seconds
+Average kHop time for class AdjacencyList: 3969763.0nano seconds
+Average kHop time for class IncidenceMatrix: 4.5243025E7nano seconds
+k = 20
+Average kHop time for class AdjacencyMatrix: 6583393.0nano seconds
+Average kHop time for class AdjacencyList: 6456167.0nano seconds
+Average kHop time for class IncidenceMatrix: 7.5644155E7nano seconds
+k = 50
+Average kHop time for class AdjacencyMatrix: 6618578.0nano seconds
+Average kHop time for class AdjacencyList: 6579587.0nano seconds
+Average kHop time for class IncidenceMatrix: 7.759202E7nano seconds
+=============Printing results for file: HM1=====================
+Graph name : HM1
+k = 3
+Average kHop time for class AdjacencyMatrix: 710828.0nano seconds
+Average kHop time for class AdjacencyList: 607705.0nano seconds
+Average kHop time for class IncidenceMatrix: 9231695.0nano seconds
+k = 20
+Average kHop time for class AdjacencyMatrix: 3564879.0nano seconds
+Average kHop time for class AdjacencyList: 3418252.0nano seconds
+Average kHop time for class IncidenceMatrix: 3.7185507E7nano seconds
+k = 50
+Average kHop time for class AdjacencyMatrix: 3558491.0nano seconds
+Average kHop time for class AdjacencyList: 3302161.0nano seconds
+Average kHop time for class IncidenceMatrix: 3.6836597E7nano seconds
+=============Printing results for file: HM2=====================
+Graph name : HM2
+k = 3
+Average kHop time for class AdjacencyMatrix: 675967.0nano seconds
+Average kHop time for class AdjacencyList: 607610.0nano seconds
+Average kHop time for class IncidenceMatrix: 9061578.0nano seconds
+k = 20
+Average kHop time for class AdjacencyMatrix: 3953804.0nano seconds
+Average kHop time for class AdjacencyList: 3453061.0nano seconds
+Average kHop time for class IncidenceMatrix: 3.7201587E7nano seconds
+k = 50
+Average kHop time for class AdjacencyMatrix: 3603087.0nano seconds
+Average kHop time for class AdjacencyList: 3324870.0nano seconds
+Average kHop time for class IncidenceMatrix: 3.6868946E7nano seconds
+=============Printing results for file: HM3=====================
+Graph name : HM3
+k = 3
+Average kHop time for class AdjacencyMatrix: 721309.0nano seconds
+Average kHop time for class AdjacencyList: 622201.0nano seconds
+Average kHop time for class IncidenceMatrix: 9224497.0nano seconds
+k = 20
+Average kHop time for class AdjacencyMatrix: 3917470.0nano seconds
+Average kHop time for class AdjacencyList: 3576209.0nano seconds
+Average kHop time for class IncidenceMatrix: 3.757401E7nano seconds
+k = 50
+Average kHop time for class AdjacencyMatrix: 3576789.0nano seconds
+Average kHop time for class AdjacencyList: 3374559.0nano seconds
+Average kHop time for class IncidenceMatrix: 3.6843136E7nano seconds
+=============Printing results for file: HL1=====================
+Graph name : HL1
+k = 3
+Average kHop time for class AdjacencyMatrix: 15052.0nano seconds
+Average kHop time for class AdjacencyList: 6103.0nano seconds
+Average kHop time for class IncidenceMatrix: 120426.0nano seconds
+k = 20
+Average kHop time for class AdjacencyMatrix: 956946.0nano seconds
+Average kHop time for class AdjacencyList: 571292.0nano seconds
+Average kHop time for class IncidenceMatrix: 6192929.0nano seconds
+k = 50
+Average kHop time for class AdjacencyMatrix: 947520.0nano seconds
+Average kHop time for class AdjacencyList: 526427.0nano seconds
+Average kHop time for class IncidenceMatrix: 5918283.0nano seconds
+=============Printing results for file: HL2=====================
+Graph name : HL2
+k = 3
+Average kHop time for class AdjacencyMatrix: 12886.0nano seconds
+Average kHop time for class AdjacencyList: 4981.0nano seconds
+Average kHop time for class IncidenceMatrix: 87699.0nano seconds
+k = 20
+Average kHop time for class AdjacencyMatrix: 798219.0nano seconds
+Average kHop time for class AdjacencyList: 438453.0nano seconds
+Average kHop time for class IncidenceMatrix: 4608328.0nano seconds
+k = 50
+Average kHop time for class AdjacencyMatrix: 797546.0nano seconds
+Average kHop time for class AdjacencyList: 420601.0nano seconds
+Average kHop time for class IncidenceMatrix: 4624898.0nano seconds
+=============Printing results for file: HL3=====================
+Graph name : HL3
+k = 3
+Average kHop time for class AdjacencyMatrix: 13200.0nano seconds
+Average kHop time for class AdjacencyList: 6059.0nano seconds
+Average kHop time for class IncidenceMatrix: 96186.0nano seconds
+k = 20
+Average kHop time for class AdjacencyMatrix: 694397.0nano seconds
+Average kHop time for class AdjacencyList: 364951.0nano seconds
+Average kHop time for class IncidenceMatrix: 4139407.0nano seconds
+k = 50
+Average kHop time for class AdjacencyMatrix: 699871.0nano seconds
+Average kHop time for class AdjacencyList: 384529.0nano seconds
+Average kHop time for class IncidenceMatrix: 4152299.0nano seconds
