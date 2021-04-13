@@ -1,6 +1,4 @@
 import java.io.PrintWriter;
-// import java.util.*;
-import java.util.HashMap;
 
 /**
  * Adjacency list implementation for the AssociationGraph interface.
@@ -21,12 +19,13 @@ public class AdjacencyList extends AbstractGraph {
     } // end of AdjacencyList()
 
     public void addVertex(String vertLabel) {
-        Node newList = new Node();
-        adjacencyList[numVertex] = newList;
+        Node newAdjList = new Node();
+        adjacencyList[numVertex] = newAdjList;
 
         labelIndexMap.put(vertLabel, numVertex);
         indexLabelMap.put(numVertex, vertLabel);
         labelStateMap.put(vertLabel, SIRState.S);
+
         numVertex++;
     } // end of addVertex()
 
@@ -64,8 +63,11 @@ public class AdjacencyList extends AbstractGraph {
         Node currentNode = adjacencyList[fromIndex];
         Node prevNode = null;
 
-        while (true) {
-            if (currentNode.getData() == toLabel) {
+        boolean cont = true;
+
+        while (cont) {
+
+            if (currentNode.getData().equals(toLabel)) {
                 // when its the first node and there is a second node
                 if (prevNode == null && currentNode.getNextNode() != null) {
                     adjacencyList[fromIndex] = currentNode.getNextNode();
@@ -75,26 +77,35 @@ public class AdjacencyList extends AbstractGraph {
                     currentNode.setData(null);
                 }
                 // when its not the first node and there is no node after
-                else if (prevNode != null && currentNode.getNextNode() != null) {
+                else if (prevNode != null && currentNode.getNextNode() == null) {
                     prevNode.setNextNode(null);
                 }
                 // when its not the first node and there is a node after
-                else if (prevNode != null && currentNode.getNextNode() == null) {
+                else if (prevNode != null && currentNode.getNextNode() != null) {
                     prevNode.setNextNode(currentNode.getNextNode());
                 }
-                break;
+                cont = false;
             }
 
             prevNode = currentNode;
             // will be null ptr if no next, but in that case
             // the program should've run the if statement above
+
             currentNode = currentNode.getNextNode();
+
         }
 
     }
 
     public void deleteVertex(String vertLabel) {
         int vertIndex = (int) labelIndexMap.get(vertLabel);
+
+        // delete all edges associated with the vertex
+        for (int i = 0; i < numVertex; i++) {
+            if (isEdgeOf(vertLabel, adjacencyList[i])) {
+                deleteFromTo(i, vertLabel);
+            }
+        }
 
         adjacencyList[vertIndex] = null;
         labelIndexMap.remove(vertLabel);
@@ -107,30 +118,38 @@ public class AdjacencyList extends AbstractGraph {
             indexLabelMap.put(vertIndex + i, indexLabelMap.get(vertIndex + i + 1));
             indexLabelMap.remove(vertIndex + i + 1);
         }
+        numVertex--;
 
     } // end of deleteVertex()
 
     public String[] kHopNeighbours(int k, String vertLabel) {
+
         String[] kHopNeighboursArray = new String[numVertex];
         int kHopNeighboursArrayLen = 0;
 
         int vertIndex = (int) labelIndexMap.get(vertLabel);
 
-        int[] currentNeighbours;
-        int currentNeighboursLen;
+        int[] currentNeighbours = new int[numVertex];
+        int currentNeighboursLen = 0;
 
-        int[] nextNeighbours = null;
+        int[] nextNeighbours = new int[numVertex];
         int nextNeighboursLen = 0;
 
         for (int i = 0; i < k; i++) {
 
             // if first iteration put the currentNeighbours in the currentNeighbours list
             if (i == 0) {
-                currentNeighbours = new int[numVertex];
-                currentNeighbours[0] = vertIndex;
-                currentNeighboursLen = 1;
+                Node currentNode = adjacencyList[vertIndex];
+
+                // if vertex has no edges at all :: early termination
+                if (currentNode.getData() == null) {
+                    String[] kHopWithoutNull = resizeArrayByLen(kHopNeighboursArray, kHopNeighboursArrayLen);
+                    return kHopWithoutNull;
+                }
+                currentNeighbours[currentNeighboursLen] = vertIndex;
+                currentNeighboursLen++;
                 // if not first iteration then we want our currentNeighbours to be the previous
-                // nextNeighbours
+
             } else {
                 currentNeighbours = nextNeighbours;
                 currentNeighboursLen = nextNeighboursLen;
@@ -141,37 +160,87 @@ public class AdjacencyList extends AbstractGraph {
 
             // Iterate through all the neighbours in the currentNeighbours list
             for (int j = 0; j < currentNeighboursLen; j++) {
-                String vertexInList = adjacencyList[i].getData();
-                int index = labelIndexMap.get(vertexInList);
+                int index = currentNeighbours[j];
+                Node currentNode = adjacencyList[index];
 
-                if (!isInArray((String) indexLabelMap.get(index), kHopNeighboursArray)) {
+                while (currentNode.getNextNode() != null) {
+                    String data = currentNode.getData();
+
+                    if (!isInArray(data, kHopNeighboursArray) && !data.equals(vertLabel)) {
+
+                        // Update the nextNeighbours list which is a list of neighbours, that we may
+                        // Need to get neighbours of in the next hop
+                        nextNeighbours[nextNeighboursLen] = labelIndexMap.get(data);
+                        nextNeighboursLen++;
+                        // Add the neighbours to the return list
+                        kHopNeighboursArray[kHopNeighboursArrayLen] = data;
+                        kHopNeighboursArrayLen++;
+                    }
+
+                    currentNode = currentNode.getNextNode();
+                }
+
+                String data = currentNode.getData();
+                if (!isInArray(data, kHopNeighboursArray) && !data.equals(vertLabel)) {
+
                     // Update the nextNeighbours list which is a list of neighbours, that we may
                     // Need to get neighbours of in the next hop
-                    nextNeighbours[nextNeighboursLen] = index;
+                    nextNeighbours[nextNeighboursLen] = labelIndexMap.get(data);
                     nextNeighboursLen++;
                     // Add the neighbours to the return list
-                    kHopNeighboursArray[kHopNeighboursArrayLen] = (String) indexLabelMap.get(index);
+                    kHopNeighboursArray[kHopNeighboursArrayLen] = data;
                     kHopNeighboursArrayLen++;
                 }
+
             }
         }
 
-        return kHopNeighboursArray;
+        String[] kHopWithoutNull = resizeArrayByLen(kHopNeighboursArray, kHopNeighboursArrayLen);
+
+        return kHopWithoutNull;
     } // end of kHopNeighbours()
 
     public void printEdges(PrintWriter os) {
         for (int i = 0; i < numVertex; i++) {
-            if (adjacencyList[i].getData() == null) {
-                os.println("");
-            } else {
+            if (adjacencyList[i].getData() != null) {
                 Node currentNode = adjacencyList[i];
-                while (currentNode.getNextNode() != null) {
+                if (currentNode.getNextNode() == null) {
                     os.println(indexLabelMap.get(i) + " " + currentNode.getData());
-                    currentNode = currentNode.getNextNode();
+                } else {
+                    while (currentNode.getNextNode() != null) {
+                        os.println(indexLabelMap.get(i) + " " + currentNode.getData());
+                        currentNode = currentNode.getNextNode();
+                    }
+                    os.println(indexLabelMap.get(i) + " " + currentNode.getData());
                 }
             }
         }
     } // end of printEdges()
+
+    private boolean isEdgeOf(String checkLabel, Node adjList) {
+        if (adjList.getData() != null) {
+            Node currentNode = adjList;
+            // if the adjlist is size 1
+            if (currentNode.getNextNode() == null) {
+                if (currentNode.getData().equals(checkLabel)) {
+                    return true;
+                }
+                return false;
+            }
+            // adjList size > 1
+            while (currentNode.getNextNode() != null) {
+                if (currentNode.getData().equals(checkLabel)) {
+                    return true;
+                }
+                currentNode = currentNode.getNextNode();
+            }
+            if (currentNode.getData().equals(checkLabel)) {
+                return true;
+            }
+        }
+        // if the adjList is empty to begin with or not in the list
+        return false;
+    }
 
     // Node implementation inner class
     public class Node {
@@ -179,6 +248,8 @@ public class AdjacencyList extends AbstractGraph {
         String data;
 
         public Node() {
+            data = null;
+            nextNode = null;
         }
 
         public Node(String data) {

@@ -1,5 +1,4 @@
 import java.io.PrintWriter;
-import java.util.HashMap;
 
 /**
  * Adjacency matrix implementation for the GraphInterface interface.
@@ -51,38 +50,51 @@ public class AdjacencyMatrix extends AbstractGraph {
     public void deleteVertex(String vertLabel) {
         int vertIndex = (int) labelIndexMap.get(vertLabel);
 
-        // Clears any edges
-        for (int i = 0; i < numVertex; i++) {
-            adjacencyMatrix[vertIndex][i] = 0;
-            adjacencyMatrix[i][vertIndex] = 0;
-        }
-
         labelIndexMap.remove(vertLabel);
         indexLabelMap.remove(vertIndex);
         labelStateMap.remove(vertLabel);
-        numVertex--;
 
-        // TODO: Shift matrix
+        // shift columns
+
+        for (int i = 0; i < numVertex - vertIndex - 1; i++) {
+            for (int j = 0; j < numVertex; j++) {
+                adjacencyMatrix[j][vertIndex + i] = adjacencyMatrix[j][vertIndex + i + 1];
+            }
+
+        }
+
+        // shift rows
+        for (int i = 0; i < numVertex - vertIndex - 1; i++) {
+            for (int j = 0; j < numVertex; j++) {
+                adjacencyMatrix[vertIndex + i][j] = adjacencyMatrix[vertIndex + i + 1][j];
+
+            }
+            labelIndexMap.put(indexLabelMap.get(vertIndex + i + 1), vertIndex + i);
+            indexLabelMap.put(vertIndex + i, indexLabelMap.get(vertIndex + i + 1));
+            indexLabelMap.remove(vertIndex + i + 1);
+        }
+
+        numVertex--;
 
     } // end of deleteVertex()
 
     public String[] kHopNeighbours(int k, String vertLabel) {
+
         String[] kHopNeighboursArray = new String[numVertex];
         int kHopNeighboursArrayLen = 0;
 
         int vertIndex = (int) labelIndexMap.get(vertLabel);
 
-        int[] currentNeighbours;
+        int[] currentNeighbours = new int[numVertex];
         int currentNeighboursLen;
 
-        int[] nextNeighbours = null;
+        int[] nextNeighbours = new int[numVertex];
         int nextNeighboursLen = 0;
 
         for (int i = 0; i < k; i++) {
 
             // if first iteration put the currentNeighbours in the currentNeighbours list
             if (i == 0) {
-                currentNeighbours = new int[numVertex];
                 currentNeighbours[0] = vertIndex;
                 currentNeighboursLen = 1;
                 // if not first iteration then we want our currentNeighbours to be the previous
@@ -99,16 +111,16 @@ public class AdjacencyMatrix extends AbstractGraph {
             for (int j = 0; j < currentNeighboursLen; j++) {
                 // Check for edges to other vertices for current neighbour index
                 for (int m = 0; m < numVertex; m++) {
+
                     if (adjacencyMatrix[currentNeighbours[j]][m] == 1) {
                         // check if the array is already in kHopNeighboursArray
-                        if (!isInArray((String) indexLabelMap.get(m), kHopNeighboursArray)) {
+                        if (!isInArray(indexLabelMap.get(m), kHopNeighboursArray) && m != vertIndex) {
                             // Update the nextNeighbours list which is a list of neighbours, that we may
                             // Need to get neighbours of in the next hop
                             nextNeighbours[nextNeighboursLen] = m;
                             nextNeighboursLen++;
                             // Add the neighbours to the return list
-                            kHopNeighboursArray[kHopNeighboursArrayLen] = (String) indexLabelMap
-                                    .get(currentNeighbours[j]);
+                            kHopNeighboursArray[kHopNeighboursArrayLen] = (String) indexLabelMap.get(m);
                             kHopNeighboursArrayLen++;
                         }
                     }
@@ -116,8 +128,9 @@ public class AdjacencyMatrix extends AbstractGraph {
             }
 
         }
+        String[] kHopWithoutNull = resizeArrayByLen(kHopNeighboursArray, kHopNeighboursArrayLen);
 
-        return kHopNeighboursArray;
+        return kHopWithoutNull;
 
     } // end of kHopNeighbours()
 
