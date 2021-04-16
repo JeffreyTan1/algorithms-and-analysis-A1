@@ -1,14 +1,15 @@
 import java.io.*;
 import java.util.*;
 
-public class Scenario3Deletion {
+// For some reason this test takes REALLY LONG. But it completes in less than 10 minutes. Within our lifetimes at least.
+public class Scenario2Deletion {
 
     public static void main(String[] args) throws FileNotFoundException {
 
-        System.out.println("Scenario 3 Deletion program beginning");
+        System.out.println("Scenario 2 Delete program beginning");
         PrintStream stdOut = System.out;
 
-        String outFile = "C:\\Users\\tanma\\Google Drive\\Synced Desktop\\Y2S1\\AA Files\\Assignments\\1\\algorithms-and-analysis-A1\\Graphs & Results\\Scenario3Del.txt";
+        String outFile = "C:\\Users\\tanma\\Google Drive\\Synced Desktop\\Y2S1\\AA Files\\Assignments\\1\\algorithms-and-analysis-A1\\Graphs & Results\\Scenario2Del.txt";
         PrintStream stream = new PrintStream(outFile);
         System.setOut(stream);
 
@@ -19,91 +20,105 @@ public class Scenario3Deletion {
         for (int char1 = 0; char1 < 3; char1++) {
             for (int char2 = 0; char2 < 3; char2++) {
                 for (int char3 = 0; char3 < 3; char3++) {
-                    System.out.println("=============Printing vert deletion results for file: " + fileChar1[char1]
+                    System.out.println("=============Printing deletion results for file: " + fileChar1[char1]
                             + fileChar2[char2] + fileChar3[char3] + "=====================");
 
                     AdjacencyList adjacencyList = new AdjacencyList();
                     AdjacencyMatrix adjacencyMatrix = new AdjacencyMatrix();
                     IncidenceMatrix incidenceMatrix = new IncidenceMatrix();
 
+                    ArrayList<String> edgesExist = new ArrayList<String>();
                     ArrayList<String> vertsExist = new ArrayList<String>();
 
                     try {
-                        readAndCreateGraphs(adjacencyList, adjacencyMatrix, incidenceMatrix, vertsExist,
+                        readAndCreateGraphs(adjacencyList, adjacencyMatrix, incidenceMatrix, edgesExist, vertsExist,
                                 fileChar1[char1], fileChar2[char2], fileChar3[char3]);
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
                     }
 
-                    int numVert = incidenceMatrix.getNumVertex();
+                    int numEdge = incidenceMatrix.getNumEdge();
 
-                    ArrayList<String> delVertList = createAddEdges(numVert, vertsExist);
+                    ArrayList<String> delEdgList = createDelEdges(numEdge, edgesExist, vertsExist);
 
-                    runDeletions(delVertList, adjacencyMatrix);
-                    runDeletions(delVertList, adjacencyList);
-                    runDeletions(delVertList, incidenceMatrix);
+                    runDeletions(delEdgList, adjacencyMatrix);
+                    runDeletions(delEdgList, adjacencyList);
+                    runDeletions(delEdgList, incidenceMatrix);
 
                 }
             }
         }
 
         System.setOut(stdOut);
-        System.out.println("Scenario 3 program finished");
+        System.out.println("Scenario 2 program finished");
 
     }
 
-    private static void runDeletions(ArrayList<String> addVertList, AbstractGraph abstractGraph) {
+    private static void runDeletions(ArrayList<String> delEdgList, AbstractGraph abstractGraph) {
 
         long totalTime = 0;
 
-        for (int i = 0; i < addVertList.size(); i++) {
-            String vert = addVertList.get(i);
+        for (int i = 0; i < delEdgList.size(); i++) {
+            String edge = delEdgList.get(i);
+            int vIndex = 0;
+            for (int j = 1; j < edge.length(); j++) {
+                if (edge.charAt(j) == 'v') {
+                    vIndex = j;
+                }
+
+            }
+            String src = edge.substring(0, vIndex);
+            String tar = edge.substring(vIndex);
 
             long startTime = System.nanoTime();
-            abstractGraph.deleteVertex(vert);
+            abstractGraph.deleteEdge(src, tar);
             totalTime = totalTime + (System.nanoTime() - startTime);
-
+            // System.out.println("a deletion was done");
         }
 
-        double averageTime = totalTime / ((double) (addVertList.size()));
+        double averageTime = totalTime / ((double) (delEdgList.size()));
         // double millis = averageTime / 1000000.0;
 
         System.out.println(
                 "Average time for deletions " + abstractGraph.getClass() + ": " + averageTime + "nano seconds");
     }
 
-    private static ArrayList<String> createAddEdges(int numVert, ArrayList<String> vertsExist) {
+    private static ArrayList<String> createDelEdges(int numEdge, ArrayList<String> edgesExist,
+            ArrayList<String> vertsExist) {
         Random rand = new Random();
 
-        int vertAmount = (int) (numVert * 0.2);
+        int edgeAmount = (int) (numEdge * 0.2);
 
-        ArrayList<String> delVerts = new ArrayList<String>();
+        ArrayList<String> delEdges = new ArrayList<String>();
 
         int count = 0;
 
-        while (count < vertAmount) {
-            int randNum = rand.nextInt(vertsExist.size());
+        while (count < edgeAmount) {
+            int randNum1 = rand.nextInt(vertsExist.size());
+            int randNum2 = rand.nextInt(vertsExist.size());
 
-            String randVert = vertsExist.get(randNum);
+            String randEdge = vertsExist.get(randNum1) + vertsExist.get(randNum2);
+            String randEdgeReverse = vertsExist.get(randNum2) + vertsExist.get(randNum1);
 
-            if (!delVerts.contains(randVert)) {
-                delVerts.add(randVert);
+            if (edgesExist.contains(randEdge) && !delEdges.contains(randEdge) && !delEdges.contains(randEdgeReverse)
+                    && randNum1 != randNum2) {
+                delEdges.add(randEdge);
                 count++;
             }
 
         }
 
-        return delVerts;
+        return delEdges;
 
     }
 
     private static void readAndCreateGraphs(AdjacencyList adjacencyList, AdjacencyMatrix adjacencyMatrix,
-            IncidenceMatrix incidenceMatrix, ArrayList<String> vertsExist, String fileChar1, String fileChar2,
-            String fileChar3) throws FileNotFoundException {
+            IncidenceMatrix incidenceMatrix, ArrayList<String> edgesExist, ArrayList<String> vertsExist,
+            String fileChar1, String fileChar2, String fileChar3) throws FileNotFoundException {
 
         String startingDir = "C:\\Users\\tanma\\Google Drive\\Synced Desktop\\Y2S1\\AA Files\\Assignments\\1\\algorithms-and-analysis-A1\\Graphs & Results\\";
-        String graphTypeDir = "Erdos-Renyi\\";
-        // String graphTypeDir = "Scale-free\\";
+        // String graphTypeDir = "Erdos-Renyi\\";
+        String graphTypeDir = "Scale-Free\\";
 
         String graphSize = null;
 
@@ -159,6 +174,9 @@ public class Scenario3Deletion {
                 adjacencyList.addEdge(edgeFrom, edgeTo);
                 adjacencyMatrix.addEdge(edgeFrom, edgeTo);
                 incidenceMatrix.addEdge(edgeFrom, edgeTo);
+
+                edgesExist.add(edgeFrom + edgeTo);
+                edgesExist.add(edgeTo + edgeFrom);
 
                 edgeReader.next();
             }

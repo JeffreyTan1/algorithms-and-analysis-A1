@@ -1,0 +1,135 @@
+=============Printing deletion results for file: HH1=====================
+Graph number : HH1
+Average time for deletions class AdjacencyMatrix: 237.04115684093438 nano seconds
+Average time for deletions class AdjacencyList: 1907.119021134594 nano seconds
+Average time for deletions class IncidenceMatrix: 6.674787391546162E7 nano seconds
+=============Printing deletion results for file: HH2=====================
+Graph number : HH2
+Average time for deletions class AdjacencyMatrix: 171.95530726256985 nano seconds
+Average time for deletions class AdjacencyList: 1062.0670391061453 nano seconds
+Average time for deletions class IncidenceMatrix: 9.35081174301676E7 nano seconds
+=============Printing deletion results for file: HH3=====================
+Graph number : HH3
+Average time for deletions class AdjacencyMatrix: 126.35882635882636 nano seconds
+Average time for deletions class AdjacencyList: 1260.894660894661 nano seconds
+Average time for deletions class IncidenceMatrix: 7.333858552188553E7 nano seconds
+=============Printing deletion results for file: HM1=====================
+Graph number : HM1
+Average time for deletions class AdjacencyMatrix: 135.20561685055165 nano seconds
+Average time for deletions class AdjacencyList: 610.2306920762287 nano seconds
+Average time for deletions class IncidenceMatrix: 4.7713155667001E7 nano seconds
+=============Printing deletion results for file: HM2=====================
+Graph number : HM2
+Average time for deletions class AdjacencyMatrix: 110.71071071071071 nano seconds
+Average time for deletions class AdjacencyList: 586.8868868868869 nano seconds
+Average time for deletions class IncidenceMatrix: 3.429167917917918E7 nano seconds
+=============Printing deletion results for file: HM3=====================
+Graph number : HM3
+Average time for deletions class AdjacencyMatrix: 116.73511293634498 nano seconds
+Average time for deletions class AdjacencyList: 558.829568788501 nano seconds
+Average time for deletions class IncidenceMatrix: 4.672829291581109E7 nano seconds
+=============Printing deletion results for file: HL1=====================
+Graph number : HL1
+Average time for deletions class AdjacencyMatrix: 168.1818181818182 nano seconds
+Average time for deletions class AdjacencyList: 274.74747474747477 nano seconds
+Average time for deletions class IncidenceMatrix: 4026440.404040404 nano seconds
+=============Printing deletion results for file: HL2=====================
+Graph number : HL2
+Average time for deletions class AdjacencyMatrix: 191.5 nano seconds
+Average time for deletions class AdjacencyList: 356.5 nano seconds
+Average time for deletions class IncidenceMatrix: 7509822.5 nano seconds
+=============Printing deletion results for file: HL3=====================
+Graph number : HL3
+Average time for deletions class AdjacencyMatrix: 183.0 nano seconds
+Average time for deletions class AdjacencyList: 334.5 nano seconds
+Average time for deletions class IncidenceMatrix: 4173283.5 nano seconds
+=============Printing deletion results for file: MH1=====================
+Graph number : MH1
+Average time for deletions class AdjacencyMatrix: 77.67441860465117 nano seconds
+Average time for deletions class AdjacencyList: 576.046511627907 nano seconds
+Average time for deletions class IncidenceMatrix: 4759688.604651162 nano seconds
+=============Printing deletion results for file: MH2=====================
+Graph number : MH2
+Average time for deletions class AdjacencyMatrix: 54.6242774566474 nano seconds
+Average time for deletions class AdjacencyList: 474.8554913294798 nano seconds
+Average time for deletions class IncidenceMatrix: 2202163.0057803467 nano seconds
+=============Printing deletion results for file: MH3=====================
+Graph number : MH3
+Average time for deletions class AdjacencyMatrix: 59.03225806451613 nano seconds
+Average time for deletions class AdjacencyList: 435.16129032258067 nano seconds
+Average time for deletions class IncidenceMatrix: 3116413.5483870967 nano seconds
+=============Printing deletion results for file: MM1=====================
+Graph number : MM1
+Average time for deletions class AdjacencyMatrix: 52.0 nano seconds
+Average time for deletions class AdjacencyList: 318.85714285714283 nano seconds
+Average time for deletions class IncidenceMatrix: 875752.5714285715 nano seconds
+=============Printing deletion results for file: MM2=====================
+Graph number : MM2
+Average time for deletions class AdjacencyMatrix: 55.357142857142854 nano seconds
+Average time for deletions class AdjacencyList: 342.85714285714283 nano seconds
+Average time for deletions class IncidenceMatrix: 1372527.380952381 nano seconds
+=============Printing deletion results for file: MM3=====================
+Graph number : MM3
+Average time for deletions class AdjacencyMatrix: 56.21301775147929 nano seconds
+Average time for deletions class AdjacencyList: 307.10059171597635 nano seconds
+Average time for deletions class IncidenceMatrix: 886365.6804733728 nano seconds
+=============Printing deletion results for file: ML1=====================
+Graph number : ML1
+Average time for deletions class AdjacencyMatrix: 85.0 nano seconds
+Average time for deletions class AdjacencyList: 277.5 nano seconds
+Average time for deletions class IncidenceMatrix: 391142.5 nano seconds
+=============Printing deletion results for file: ML2=====================
+Graph number : ML2
+Average time for deletions class AdjacencyMatrix: 97.36842105263158 nano seconds
+Average time for deletions class AdjacencyList: 284.2105263157895 nano seconds
+Average time for deletions class IncidenceMatrix: 191089.47368421053 nano seconds
+=============Printing deletion results for file: ML3=====================
+Graph number : ML3
+Average time for deletions class AdjacencyMatrix: 65.85365853658537 nano seconds
+Average time for deletions class AdjacencyList: 243.90243902439025 nano seconds
+Average time for deletions class IncidenceMatrix: 382087.8048780488 nano seconds
+=============Printing deletion results for file: LH1=====================
+Graph number : LH1
+Average time for deletions class AdjacencyMatrix: 63.63636363636363 nano seconds
+Average time for deletions class AdjacencyList: 296.1038961038961 nano seconds
+Average time for deletions class IncidenceMatrix: 54844.155844155845 nano seconds
+=============Printing deletion results for file: LH2=====================
+Graph number : LH2
+Average time for deletions class AdjacencyMatrix: 75.0 nano seconds
+Average time for deletions class AdjacencyList: 300.0 nano seconds
+Average time for deletions class IncidenceMatrix: 33752.083333333336 nano seconds
+=============Printing deletion results for file: LH3=====================
+Graph number : LH3
+Average time for deletions class AdjacencyMatrix: 51.724137931034484 nano seconds
+Average time for deletions class AdjacencyList: 282.7586206896552 nano seconds
+Average time for deletions class IncidenceMatrix: 37482.75862068965 nano seconds
+=============Printing deletion results for file: LM1=====================
+Graph number : LM1
+Average time for deletions class AdjacencyMatrix: 64.51612903225806 nano seconds
+Average time for deletions class AdjacencyList: 335.48387096774195 nano seconds
+Average time for deletions class IncidenceMatrix: 21464.516129032258 nano seconds
+=============Printing deletion results for file: LM2=====================
+Graph number : LM2
+Average time for deletions class AdjacencyMatrix: 69.04761904761905 nano seconds
+Average time for deletions class AdjacencyList: 352.3809523809524 nano seconds
+Average time for deletions class IncidenceMatrix: 34614.28571428572 nano seconds
+=============Printing deletion results for file: LM3=====================
+Graph number : LM3
+Average time for deletions class AdjacencyMatrix: 75.0 nano seconds
+Average time for deletions class AdjacencyList: 337.5 nano seconds
+Average time for deletions class IncidenceMatrix: 14741.666666666666 nano seconds
+=============Printing deletion results for file: LL1=====================
+Graph number : LL1
+Average time for deletions class AdjacencyMatrix: 111.11111111111111 nano seconds
+Average time for deletions class AdjacencyList: 344.44444444444446 nano seconds
+Average time for deletions class IncidenceMatrix: 6622.222222222223 nano seconds
+=============Printing deletion results for file: LL2=====================
+Graph number : LL2
+Average time for deletions class AdjacencyMatrix: 90.0 nano seconds
+Average time for deletions class AdjacencyList: 420.0 nano seconds
+Average time for deletions class IncidenceMatrix: 5930.0 nano seconds
+=============Printing deletion results for file: LL3=====================
+Graph number : LL3
+Average time for deletions class AdjacencyMatrix: 80.0 nano seconds
+Average time for deletions class AdjacencyList: 310.0 nano seconds
+Average time for deletions class IncidenceMatrix: 6600.0 nano seconds

@@ -1,14 +1,14 @@
 import java.io.*;
 import java.util.*;
 
-public class Scenario2Addition {
+public class Scenario3Addition {
 
     public static void main(String[] args) throws FileNotFoundException {
 
-        System.out.println("Scenario 2 Addition program beginning");
+        System.out.println("Scenario 3 Addition program beginning");
         PrintStream stdOut = System.out;
 
-        String outFile = "C:\\Users\\tanma\\Google Drive\\Synced Desktop\\Y2S1\\AA Files\\Assignments\\1\\algorithms-and-analysis-A1\\Graphs & Results\\Scenario2Add.txt";
+        String outFile = "C:\\Users\\tanma\\Google Drive\\Synced Desktop\\Y2S1\\AA Files\\Assignments\\1\\algorithms-and-analysis-A1\\Graphs & Results\\Scenario3Add.txt";
         PrintStream stream = new PrintStream(outFile);
         System.setOut(stream);
 
@@ -19,104 +19,80 @@ public class Scenario2Addition {
         for (int char1 = 0; char1 < 3; char1++) {
             for (int char2 = 0; char2 < 3; char2++) {
                 for (int char3 = 0; char3 < 3; char3++) {
-                    System.out.println("=============Printing addition results for file: " + fileChar1[char1]
+                    System.out.println("=============Printing vert addition results for file: " + fileChar1[char1]
                             + fileChar2[char2] + fileChar3[char3] + "=====================");
 
                     AdjacencyList adjacencyList = new AdjacencyList();
                     AdjacencyMatrix adjacencyMatrix = new AdjacencyMatrix();
                     IncidenceMatrix incidenceMatrix = new IncidenceMatrix();
 
-                    ArrayList<String> edgesExist = new ArrayList<String>();
                     ArrayList<String> vertsExist = new ArrayList<String>();
 
                     try {
-                        readAndCreateGraphs(adjacencyList, adjacencyMatrix, incidenceMatrix, edgesExist, vertsExist,
+                        readAndCreateGraphs(adjacencyList, adjacencyMatrix, incidenceMatrix, vertsExist,
                                 fileChar1[char1], fileChar2[char2], fileChar3[char3]);
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
                     }
 
-                    int numEdge = incidenceMatrix.getNumEdge();
+                    int numVert = incidenceMatrix.getNumVertex();
 
-                    ArrayList<String> addEdgList = createAddEdges(numEdge, edgesExist, vertsExist);
+                    ArrayList<String> addVertList = createaddVertes(numVert, vertsExist);
 
-                    runAdditions(addEdgList, adjacencyMatrix);
-                    runAdditions(addEdgList, adjacencyList);
-                    runAdditions(addEdgList, incidenceMatrix);
+                    runAdditions(addVertList, adjacencyMatrix);
+                    runAdditions(addVertList, adjacencyList);
+                    runAdditions(addVertList, incidenceMatrix);
 
                 }
             }
         }
 
         System.setOut(stdOut);
-        System.out.println("Scenario 2 program finished");
+        System.out.println("Scenario 3 addition program finished");
 
     }
 
-    private static void runAdditions(ArrayList<String> addEdgList, AbstractGraph abstractGraph) {
+    private static void runAdditions(ArrayList<String> addVertList, AbstractGraph abstractGraph) {
 
         long totalTime = 0;
 
-        for (int i = 0; i < addEdgList.size(); i++) {
-            String edge = addEdgList.get(i);
-            int vIndex = 0;
-            for (int j = 1; j < edge.length(); j++) {
-                if (edge.charAt(j) == 'v') {
-                    vIndex = j;
-                }
-
-            }
-            String src = edge.substring(0, vIndex);
-            String tar = edge.substring(vIndex);
+        for (int i = 0; i < addVertList.size(); i++) {
+            String vert = addVertList.get(i);
 
             long startTime = System.nanoTime();
-            abstractGraph.addEdge(src, tar);
+            abstractGraph.addVertex(vert);
             totalTime = totalTime + (System.nanoTime() - startTime);
 
         }
 
-        double averageTime = totalTime / ((double) (addEdgList.size()));
+        double averageTime = totalTime / ((double) (addVertList.size()));
         // double millis = averageTime / 1000000.0;
 
         System.out.println(
                 "Average time for additions " + abstractGraph.getClass() + ": " + averageTime + "nano seconds");
     }
 
-    private static ArrayList<String> createAddEdges(int numEdge, ArrayList<String> edgesExist,
-            ArrayList<String> vertsExist) {
-        Random rand = new Random();
+    private static ArrayList<String> createaddVertes(int numVert, ArrayList<String> vertsExist) {
+        int vertAmount = (int) (numVert * 0.2);
 
-        int edgeAmount = (int) (numEdge * 0.2);
+        ArrayList<String> addVerts = new ArrayList<String>();
 
-        ArrayList<String> addEdges = new ArrayList<String>();
-
-        int count = 0;
-
-        while (count < edgeAmount) {
-            int randNum1 = rand.nextInt(vertsExist.size());
-            int randNum2 = rand.nextInt(vertsExist.size());
-
-            String randEdge = vertsExist.get(randNum1) + vertsExist.get(randNum2);
-            // String randEdgeReverse = vertsExist.get(randNum2) + vertsExist.get(randNum1);
-
-            if (!edgesExist.contains(randEdge) && !addEdges.contains(randEdge) && randNum1 != randNum2) {
-                addEdges.add(randEdge);
-                count++;
-            }
-
+        for (int i = 0; i < vertAmount; i++) {
+            String newVert = "v" + (vertAmount + 1);
+            addVerts.add(newVert);
         }
 
-        return addEdges;
+        return addVerts;
 
     }
 
     private static void readAndCreateGraphs(AdjacencyList adjacencyList, AdjacencyMatrix adjacencyMatrix,
-            IncidenceMatrix incidenceMatrix, ArrayList<String> edgesExist, ArrayList<String> vertsExist,
-            String fileChar1, String fileChar2, String fileChar3) throws FileNotFoundException {
+            IncidenceMatrix incidenceMatrix, ArrayList<String> vertsExist, String fileChar1, String fileChar2,
+            String fileChar3) throws FileNotFoundException {
 
         String startingDir = "C:\\Users\\tanma\\Google Drive\\Synced Desktop\\Y2S1\\AA Files\\Assignments\\1\\algorithms-and-analysis-A1\\Graphs & Results\\";
-        String graphTypeDir = "Erdos-Renyi\\";
-        // String graphTypeDir = "Scale-free\\";
+        // String graphTypeDir = "Erdos-Renyi\\";
+        String graphTypeDir = "Scale-Free\\";
 
         String graphSize = null;
 
@@ -172,9 +148,6 @@ public class Scenario2Addition {
                 adjacencyList.addEdge(edgeFrom, edgeTo);
                 adjacencyMatrix.addEdge(edgeFrom, edgeTo);
                 incidenceMatrix.addEdge(edgeFrom, edgeTo);
-
-                edgesExist.add(edgeFrom + edgeTo);
-                edgesExist.add(edgeTo + edgeFrom);
 
                 edgeReader.next();
             }

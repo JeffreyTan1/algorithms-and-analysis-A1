@@ -19,7 +19,7 @@ public class Scenario1 {
             for (int char3 = 0; char3 < 3; char3++) {
                 System.out.println("=============Printing results for file: " + "H" + fileChar2[char2]
                         + fileChar3[char3] + "=====================");
-                int[] k = { 3, 20, 50 };
+                int[] k = { 2, 4, 6 };
 
                 AdjacencyList adjacencyList = new AdjacencyList();
                 AdjacencyMatrix adjacencyMatrix = new AdjacencyMatrix();
@@ -36,13 +36,13 @@ public class Scenario1 {
 
                 for (int i = 0; i < 3; i++) {
                     if (i == 0) {
-                        System.out.println("k = 3");
+                        System.out.println("k = " + k[0]);
                     }
                     if (i == 1) {
-                        System.out.println("k = 20");
+                        System.out.println("k = " + k[1]);
                     }
                     if (i == 2) {
-                        System.out.println("k = 50");
+                        System.out.println("k = " + k[2]);
                     }
                     runKHopOnSeeds(kHopSeeds, adjacencyMatrix, k[i]);
 
@@ -69,9 +69,9 @@ public class Scenario1 {
         }
 
         double averageTime = totalTime / ((double) (seeds.size()));
-        // double millis = averageTime / 1000000.0;
+        double millis = averageTime / 1000000.0;
 
-        System.out.println("Average kHop time for " + abstractGraph.getClass() + ": " + averageTime + "nano seconds");
+        System.out.println("Average kHop time for " + abstractGraph.getClass() + ": " + millis + " milli seconds");
     }
 
     private static ArrayList<String> createKHopSeeds(AbstractGraph abstractGraph) {
@@ -103,8 +103,8 @@ public class Scenario1 {
             IncidenceMatrix incidenceMatrix, String fileChar2, String fileChar3) throws FileNotFoundException {
 
         String startingDir = "C:\\Users\\tanma\\Google Drive\\Synced Desktop\\Y2S1\\AA Files\\Assignments\\1\\algorithms-and-analysis-A1\\Graphs & Results\\";
-        String graphTypeDir = "Erdos-Renyi\\";
-        // String graphTypeDir = "Scale-free\\";
+        // String graphTypeDir = "Erdos-Renyi\\";
+        String graphTypeDir = "Scale-Free\\";
         String graphSize = "High\\";
         String fileInName = "H" + fileChar2 + fileChar3;
         String netExt = ".net";

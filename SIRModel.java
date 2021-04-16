@@ -89,13 +89,6 @@ public class SIRModel {
             }
         }
 
-        // System.out.println("Sus vertices: " + "\n" +
-        // arrayToString(susceptibleVertices));
-        // System.out.println("Inf vertices: " + "\n" +
-        // arrayToString(infectedVertices));
-        // System.out.println("Rec vertices: " + "\n" +
-        // arrayToString(recoveredVertices));
-
         boolean continueModel = true;
         int iter = 1;
 
@@ -103,18 +96,17 @@ public class SIRModel {
         int prevRec = -1;
         int sameInfRecCounter = 0;
 
+        // String[] a = { "a", "b" };
+        // String[] b = { "b", "c" };
+        // sirModelOutWriter.println("a-b = " + arrayToString(minusArrays(a, b)));
+
         while (continueModel) {
             // System.out.println("iter: " + iter);
 
             newlyInfected = updateInfected(mGraph, infectionProb);
             newlyRecovered = updateRecovered(mGraph, recoverProb);
 
-            // System.out.println("infvert " + arrayToString(infectedVertices));
-            // System.out.println("newlyinf " + arrayToString(newlyInfected));
-            // System.out.println("newlyrec " + arrayToString(newlyRecovered));
-
-            // System.out.println("unison array " +
-            // arrayToString(unisonOfArrays(infectedVertices, newlyInfected)));
+            suscLen = suscLen - getArrayLengthNonNull(newlyInfected);
 
             infectedVertices = minusArrays(unisonOfArrays(infectedVertices, newlyInfected), newlyRecovered);
             infLen = getArrayLengthNonNull(infectedVertices);
@@ -124,8 +116,11 @@ public class SIRModel {
 
             continueModel = updateStop(prevInf, prevRec);
 
-            String line = iter + ":" + "[" + arrayToString(newlyInfected) + "]" + "[" + arrayToString(newlyRecovered)
-                    + "]";
+            // String line = iter + ":" + "[" + arrayToString(newlyInfected) + "]" + "[" +
+            // arrayToString(newlyRecovered)
+            // + "]";
+
+            String line = iter + " : SuscLen = " + suscLen + " InfLen = " + infLen + " RecLen = " + recLen;
 
             sirModelOutWriter.println(line);
 

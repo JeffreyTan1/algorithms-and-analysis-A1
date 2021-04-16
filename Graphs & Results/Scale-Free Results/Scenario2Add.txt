@@ -1,0 +1,135 @@
+=============Printing addition results for file: HH1=====================
+Graph number : HH1
+Average time for additions class AdjacencyMatrix: 198.66518353726363 nano seconds
+Average time for additions class AdjacencyList: 1036.3737486095663 nano seconds
+Average time for additions class IncidenceMatrix: 18340.100111234704 nano seconds
+=============Printing addition results for file: HH2=====================
+Graph number : HH2
+Average time for additions class AdjacencyMatrix: 156.64804469273744 nano seconds
+Average time for additions class AdjacencyList: 862.0670391061452 nano seconds
+Average time for additions class IncidenceMatrix: 17066.703910614524 nano seconds
+=============Printing addition results for file: HH3=====================
+Graph number : HH3
+Average time for additions class AdjacencyMatrix: 138.96103896103895 nano seconds
+Average time for additions class AdjacencyList: 1058.008658008658 nano seconds
+Average time for additions class IncidenceMatrix: 17164.790764790763 nano seconds
+=============Printing addition results for file: HM1=====================
+Graph number : HM1
+Average time for additions class AdjacencyMatrix: 160.38114343029088 nano seconds
+Average time for additions class AdjacencyList: 421.4643931795386 nano seconds
+Average time for additions class IncidenceMatrix: 14818.054162487462 nano seconds
+=============Printing addition results for file: HM2=====================
+Graph number : HM2
+Average time for additions class AdjacencyMatrix: 129.82982982982983 nano seconds
+Average time for additions class AdjacencyList: 364.5645645645646 nano seconds
+Average time for additions class IncidenceMatrix: 15195.395395395395 nano seconds
+=============Printing addition results for file: HM3=====================
+Graph number : HM3
+Average time for additions class AdjacencyMatrix: 142.29979466119096 nano seconds
+Average time for additions class AdjacencyList: 499.38398357289526 nano seconds
+Average time for additions class IncidenceMatrix: 15353.901437371664 nano seconds
+=============Printing addition results for file: HL1=====================
+Graph number : HL1
+Average time for additions class AdjacencyMatrix: 210.1010101010101 nano seconds
+Average time for additions class AdjacencyList: 178.2828282828283 nano seconds
+Average time for additions class IncidenceMatrix: 15595.959595959595 nano seconds
+=============Printing addition results for file: HL2=====================
+Graph number : HL2
+Average time for additions class AdjacencyMatrix: 153.5 nano seconds
+Average time for additions class AdjacencyList: 155.0 nano seconds
+Average time for additions class IncidenceMatrix: 15535.5 nano seconds
+=============Printing addition results for file: HL3=====================
+Graph number : HL3
+Average time for additions class AdjacencyMatrix: 152.0 nano seconds
+Average time for additions class AdjacencyList: 157.5 nano seconds
+Average time for additions class IncidenceMatrix: 15162.0 nano seconds
+=============Printing addition results for file: MH1=====================
+Graph number : MH1
+Average time for additions class AdjacencyMatrix: 66.74418604651163 nano seconds
+Average time for additions class AdjacencyList: 410.69767441860466 nano seconds
+Average time for additions class IncidenceMatrix: 3246.279069767442 nano seconds
+=============Printing addition results for file: MH2=====================
+Graph number : MH2
+Average time for additions class AdjacencyMatrix: 92.48554913294798 nano seconds
+Average time for additions class AdjacencyList: 383.8150289017341 nano seconds
+Average time for additions class IncidenceMatrix: 3453.757225433526 nano seconds
+=============Printing addition results for file: MH3=====================
+Graph number : MH3
+Average time for additions class AdjacencyMatrix: 80.3225806451613 nano seconds
+Average time for additions class AdjacencyList: 323.8709677419355 nano seconds
+Average time for additions class IncidenceMatrix: 3414.8387096774195 nano seconds
+=============Printing addition results for file: MM1=====================
+Graph number : MM1
+Average time for additions class AdjacencyMatrix: 77.14285714285714 nano seconds
+Average time for additions class AdjacencyList: 190.28571428571428 nano seconds
+Average time for additions class IncidenceMatrix: 3008.5714285714284 nano seconds
+=============Printing addition results for file: MM2=====================
+Graph number : MM2
+Average time for additions class AdjacencyMatrix: 77.38095238095238 nano seconds
+Average time for additions class AdjacencyList: 191.66666666666666 nano seconds
+Average time for additions class IncidenceMatrix: 2954.1666666666665 nano seconds
+=============Printing addition results for file: MM3=====================
+Graph number : MM3
+Average time for additions class AdjacencyMatrix: 56.80473372781065 nano seconds
+Average time for additions class AdjacencyList: 190.53254437869822 nano seconds
+Average time for additions class IncidenceMatrix: 2756.804733727811 nano seconds
+=============Printing addition results for file: ML1=====================
+Graph number : ML1
+Average time for additions class AdjacencyMatrix: 152.5 nano seconds
+Average time for additions class AdjacencyList: 197.5 nano seconds
+Average time for additions class IncidenceMatrix: 2500.0 nano seconds
+=============Printing addition results for file: ML2=====================
+Graph number : ML2
+Average time for additions class AdjacencyMatrix: 131.57894736842104 nano seconds
+Average time for additions class AdjacencyList: 142.10526315789474 nano seconds
+Average time for additions class IncidenceMatrix: 2455.2631578947367 nano seconds
+=============Printing addition results for file: ML3=====================
+Graph number : ML3
+Average time for additions class AdjacencyMatrix: 109.7560975609756 nano seconds
+Average time for additions class AdjacencyList: 207.3170731707317 nano seconds
+Average time for additions class IncidenceMatrix: 2458.5365853658536 nano seconds
+=============Printing addition results for file: LH1=====================
+Graph number : LH1
+Average time for additions class AdjacencyMatrix: 63.63636363636363 nano seconds
+Average time for additions class AdjacencyList: 284.4155844155844 nano seconds
+Average time for additions class IncidenceMatrix: 406.4935064935065 nano seconds
+=============Printing addition results for file: LH2=====================
+Graph number : LH2
+Average time for additions class AdjacencyMatrix: 87.5 nano seconds
+Average time for additions class AdjacencyList: 281.25 nano seconds
+Average time for additions class IncidenceMatrix: 447.9166666666667 nano seconds
+=============Printing addition results for file: LH3=====================
+Graph number : LH3
+Average time for additions class AdjacencyMatrix: 58.62068965517241 nano seconds
+Average time for additions class AdjacencyList: 275.86206896551727 nano seconds
+Average time for additions class IncidenceMatrix: 650.0 nano seconds
+=============Printing addition results for file: LM1=====================
+Graph number : LM1
+Average time for additions class AdjacencyMatrix: 67.74193548387096 nano seconds
+Average time for additions class AdjacencyList: 280.64516129032256 nano seconds
+Average time for additions class IncidenceMatrix: 564.516129032258 nano seconds
+=============Printing addition results for file: LM2=====================
+Graph number : LM2
+Average time for additions class AdjacencyMatrix: 57.142857142857146 nano seconds
+Average time for additions class AdjacencyList: 273.8095238095238 nano seconds
+Average time for additions class IncidenceMatrix: 373.8095238095238 nano seconds
+=============Printing addition results for file: LM3=====================
+Graph number : LM3
+Average time for additions class AdjacencyMatrix: 312.5 nano seconds
+Average time for additions class AdjacencyList: 341.6666666666667 nano seconds
+Average time for additions class IncidenceMatrix: 662.5 nano seconds
+=============Printing addition results for file: LL1=====================
+Graph number : LL1
+Average time for additions class AdjacencyMatrix: 155.55555555555554 nano seconds
+Average time for additions class AdjacencyList: 200.0 nano seconds
+Average time for additions class IncidenceMatrix: 744.4444444444445 nano seconds
+=============Printing addition results for file: LL2=====================
+Graph number : LL2
+Average time for additions class AdjacencyMatrix: 120.0 nano seconds
+Average time for additions class AdjacencyList: 240.0 nano seconds
+Average time for additions class IncidenceMatrix: 610.0 nano seconds
+=============Printing addition results for file: LL3=====================
+Graph number : LL3
+Average time for additions class AdjacencyMatrix: 180.0 nano seconds
+Average time for additions class AdjacencyList: 290.0 nano seconds
+Average time for additions class IncidenceMatrix: 520.0 nano seconds

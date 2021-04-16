@@ -1,0 +1,92 @@
+=============Printing deletion results for file : HM1=====================
+Graph number  : HM1
+
+Printing results when recProb : 0.2 infProb : 0.8
+
+Printing results when seed proportion : 0.03
+1 : SuscLen = 417 InfLen = 83 RecLen = 0
+2 : SuscLen = 180 InfLen = 307 RecLen = 13
+3 : SuscLen = 105 InfLen = 334 RecLen = 61
+4 : SuscLen = 90 InfLen = 273 RecLen = 137
+5 : SuscLen = 89 InfLen = 217 RecLen = 194
+6 : SuscLen = 89 InfLen = 165 RecLen = 246
+7 : SuscLen = 89 InfLen = 131 RecLen = 280
+8 : SuscLen = 89 InfLen = 100 RecLen = 311
+9 : SuscLen = 89 InfLen = 74 RecLen = 337
+10 : SuscLen = 89 InfLen = 58 RecLen = 353
+11 : SuscLen = 89 InfLen = 47 RecLen = 364
+12 : SuscLen = 89 InfLen = 39 RecLen = 372
+13 : SuscLen = 89 InfLen = 30 RecLen = 381
+14 : SuscLen = 89 InfLen = 27 RecLen = 384
+15 : SuscLen = 89 InfLen = 22 RecLen = 389
+16 : SuscLen = 89 InfLen = 15 RecLen = 396
+17 : SuscLen = 89 InfLen = 13 RecLen = 398
+18 : SuscLen = 89 InfLen = 10 RecLen = 401
+19 : SuscLen = 89 InfLen = 4 RecLen = 407
+20 : SuscLen = 89 InfLen = 3 RecLen = 408
+21 : SuscLen = 89 InfLen = 2 RecLen = 409
+22 : SuscLen = 89 InfLen = 2 RecLen = 409
+23 : SuscLen = 89 InfLen = 1 RecLen = 410
+24 : SuscLen = 89 InfLen = 0 RecLen = 411
+25 : SuscLen = 89 InfLen = 0 RecLen = 411
+
+Printing results when seed proportion : 0.09
+1 : SuscLen = 281 InfLen = 207 RecLen = 12
+2 : SuscLen = 113 InfLen = 347 RecLen = 40
+3 : SuscLen = 89 InfLen = 307 RecLen = 104
+4 : SuscLen = 83 InfLen = 246 RecLen = 171
+5 : SuscLen = 82 InfLen = 197 RecLen = 221
+6 : SuscLen = 82 InfLen = 165 RecLen = 253
+7 : SuscLen = 81 InfLen = 133 RecLen = 286
+8 : SuscLen = 81 InfLen = 106 RecLen = 313
+9 : SuscLen = 81 InfLen = 87 RecLen = 332
+10 : SuscLen = 81 InfLen = 76 RecLen = 343
+11 : SuscLen = 81 InfLen = 58 RecLen = 361
+12 : SuscLen = 81 InfLen = 48 RecLen = 371
+13 : SuscLen = 81 InfLen = 38 RecLen = 381
+14 : SuscLen = 81 InfLen = 33 RecLen = 386
+15 : SuscLen = 81 InfLen = 26 RecLen = 393
+16 : SuscLen = 81 InfLen = 19 RecLen = 400
+17 : SuscLen = 81 InfLen = 15 RecLen = 404
+18 : SuscLen = 81 InfLen = 13 RecLen = 406
+19 : SuscLen = 81 InfLen = 11 RecLen = 408
+20 : SuscLen = 81 InfLen = 9 RecLen = 410
+21 : SuscLen = 81 InfLen = 8 RecLen = 411
+22 : SuscLen = 81 InfLen = 4 RecLen = 415
+23 : SuscLen = 81 InfLen = 4 RecLen = 415
+24 : SuscLen = 81 InfLen = 3 RecLen = 416
+25 : SuscLen = 81 InfLen = 2 RecLen = 417
+26 : SuscLen = 81 InfLen = 2 RecLen = 417
+27 : SuscLen = 81 InfLen = 2 RecLen = 417
+28 : SuscLen = 81 InfLen = 2 RecLen = 417
+29 : SuscLen = 81 InfLen = 1 RecLen = 418
+30 : SuscLen = 81 InfLen = 1 RecLen = 418
+31 : SuscLen = 81 InfLen = 1 RecLen = 418
+32 : SuscLen = 81 InfLen = 1 RecLen = 418
+33 : SuscLen = 81 InfLen = 0 RecLen = 419
+34 : SuscLen = 81 InfLen = 0 RecLen = 419
+
+Printing results when recProb : 0.8 infProb : 0.2
+
+Printing results when seed proportion : 0.03
+1 : SuscLen = 356 InfLen = 93 RecLen = 51
+2 : SuscLen = 259 InfLen = 118 RecLen = 123
+3 : SuscLen = 214 InfLen = 68 RecLen = 218
+4 : SuscLen = 204 InfLen = 23 RecLen = 273
+5 : SuscLen = 202 InfLen = 11 RecLen = 287
+6 : SuscLen = 201 InfLen = 3 RecLen = 296
+7 : SuscLen = 201 InfLen = 1 RecLen = 298
+8 : SuscLen = 201 InfLen = 0 RecLen = 299
+9 : SuscLen = 201 InfLen = 0 RecLen = 299
+
+Printing results when seed proportion : 0.09
+1 : SuscLen = 307 InfLen = 111 RecLen = 82
+2 : SuscLen = 215 InfLen = 112 RecLen = 173
+3 : SuscLen = 189 InfLen = 52 RecLen = 259
+4 : SuscLen = 180 InfLen = 23 RecLen = 297
+5 : SuscLen = 179 InfLen = 7 RecLen = 314
+6 : SuscLen = 179 InfLen = 2 RecLen = 319
+7 : SuscLen = 178 InfLen = 1 RecLen = 321
+8 : SuscLen = 178 InfLen = 1 RecLen = 321
+9 : SuscLen = 178 InfLen = 0 RecLen = 322
+10 : SuscLen = 178 InfLen = 0 RecLen = 322
